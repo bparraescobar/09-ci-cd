@@ -1,7 +1,10 @@
 name: 04 - Events
 
-on:    
+on:
+    issues:
+        types: [opened, reopened]
     issue_comment:
+        
 
 jobs:
     inspect-event:
@@ -11,4 +14,4 @@ jobs:
               run: |
                 echo "Event: ${{ github.event_name }}"
                 echo "Issue: ${{ github.event.issue.number }}"
-                echo "Comment: ${{ github.event.comment.body }}"
+                echo "Comment: ${{ github.event.comment.body }}"        
