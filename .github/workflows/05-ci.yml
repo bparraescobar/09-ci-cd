@@ -21,24 +21,28 @@ jobs:
 
             - name: Instalar dependencias
               run: |
+                    cd 09-ci-cd
                     echo "::group::Instalar dependencias"
                     pnpm install --frozen-lockfile
                     echo "::endgroup::"
 
             - name: Lint
               run: |
+                    cd 09-ci-cd
                     echo "::group::lint"
                     pnpm lint
                     echo "::endgroup::"
 
             - name: Test
               run: |
+                    cd 09-ci-cd
                     echo "::group::Test"
                     pnpm test
                     echo "::endgroup::"
 
             - name: Build
               run: |
+                    cd 09-ci-cd
                     echo "::group::Build"
                     pnpm build              
                     echo "::endgroup::"
